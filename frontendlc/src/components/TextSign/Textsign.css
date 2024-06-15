@@ -1,0 +1,53 @@
+.page2 {
+    background: rgb(255, 255, 240);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    height: 100vh; /* Make the container full height of the viewport */
+  }
+  
+  .mainbox {
+    width: 70%; /* Set width to 70% */
+    height: 80%;
+    padding: 20px; /* Add some padding for better spacing */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    margin-top: 20px; /* Add margin to separate from the navbar */
+  }
+  
+  .mainbox input[type="text"] {
+    width: 40%;
+    height: 35px;
+    margin-bottom: 30px; /* Add some space between elements */
+  }
+  .mainbox video{
+    width: 90%;
+    height: 75%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .p2btn {
+    margin-bottom: 10px;
+    width: 40%;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #fff;
+    background: linear-gradient(90deg, #818181 0%, #818181 100%);
+    padding: 1rem 2.5rem;
+    outline: 1.5px solid transparent;
+    border: none;
+    border-radius: 0.2rem;
+    cursor: pointer;
+    transition: all 0.3 ease;
+  }
+  
+  .p2btn:hover {
+    color: #000;
+    background: #ffffff;
+    border: 1.5px solid #000;
+    outline: 1.5px solid transparent;
+  }

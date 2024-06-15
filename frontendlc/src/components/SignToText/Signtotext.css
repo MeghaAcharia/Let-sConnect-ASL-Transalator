@@ -1,0 +1,77 @@
+.page1 {
+    background: rgb(250, 250, 240);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    height: 100vh; /* Make the container full height of the viewport */
+  }
+  
+  .mainbox1 {
+    width: 70%; /* Set width to 70% */
+    padding: 20px; /* Add some padding for better spacing */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    margin-top: 20px; /* Add margin to separate from the navbar */
+  }
+  
+  .start-btn {
+    font-size: 1rem; /* Adjust font size */
+    font-weight: 500;
+    color: #fff;
+    background: linear-gradient(90deg, #818181 0%, #818181 100%);
+    padding: 0.8rem 2rem; /* Adjust padding */
+    outline: 1.5px solid transparent;
+    border: none;
+    border-radius: 0.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+  }
+  
+  .start-btn:hover {
+    color: #000;
+    background: #ffffff;
+    border: 1.5px solid #000; /* Add black border on hover */
+    outline: 1.5px solid transparent;
+  }
+  
+  .stop-btn {
+    font-size: 1rem; /* Adjust font size */
+    font-weight: 500;
+    color: #fff;
+    background: linear-gradient(90deg, #818181 0%, #818181 100%);
+    padding: 0.8rem 2rem; /* Adjust padding */
+    margin-top: 10px; /* Add margin from video */
+    outline: 1.5px solid transparent;
+    border: none;
+    border-radius: 0.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .stop-btn:hover {
+    color: #000;
+    background: #ffffff;
+    border: 1.5px solid #000; /* Add black border on hover */
+    outline: 1.5px solid transparent;
+  }
+  
+  .output-box {
+  background: rgb(222, 247, 255);
+  width: 100%; /* Set width to 100% */
+  height: 100px; /* Set height as needed */
+  margin-top: 20px; /* Add margin from video */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ccc; /* Add border */
+  border-radius: 10px; /* Add border radius */
+}
+
+  .video-player {
+    width: 100%; /* Set width to 100% */
+    height: auto; /* Let the height scale with the width */
+  }
