@@ -53,43 +53,42 @@ const Signup = () => {
     <div className="signup">
         <Navbar />
         <div className="form2-popup">
+            <div className="form2-description">
+                <p>To become a part of our community, please sign up using your personal information to stay connected with us.</p>
+            </div>
             <div className="form2-box">
                 <div className="form2-details">
                     <h2>Create Account</h2>
-                    <p>To become a part of our community, please sign up using your personal information to stay connected with us</p>
+                    {/* <p>To become a part of our community, please sign up using your personal information to stay connected with us</p> */}
                 </div>
                 <div className="form2-content">
                     <h2>SIGNUP</h2>
-                    <form onSubmit={handleSubmit}>
+                    <div className="wrapper">
+                        <form onSubmit={handleSubmit} name='form2'>
                         <div className='inputs'>
                             <label htmlFor='fname'><strong>First name</strong></label><br />
-                            <input type='fname' placeholder='Enter your First Name' required name="first_name" 
-                  value={first_name} 
-                  onChange={handleOnchange}/>
+                            <input type='text' placeholder='Enter your First Name' required value={first_name} 
+                  onChange={handleOnchange} />
                         </div>
                         <div className='inputs'>
                             <label htmlFor='lname'><strong>Last name</strong></label><br />
-                            <input type='lname' placeholder='Enter your Last Name' required name="last_name" 
-                 value={last_name} 
-                 onChange={handleOnchange}/>
+                            <input type='text' placeholder='Enter your Last Name' required value={last_name} 
+                 onChange={handleOnchange} />
                         </div>
                         <div className='inputs'>
                             <label htmlFor='email'><strong>Email</strong></label><br />
-                            <input type='email' placeholder='Enter your Email' required name="email" 
-                  value={email}  
-                  onChange={handleOnchange}/>
+                            <input type='email' placeholder='Enter your Email' required value={email}  
+                  onChange={handleOnchange} />
                         </div>
                         <div className='inputs'>
                             <label htmlFor='password'><strong>Create Password</strong></label><br />
-                            <input type='password' placeholder='Enter strong Password' required name="password" 
-                 value={password} 
-                 onChange={handleOnchange}/>
+                            <input type='password' placeholder='Enter strong Password' required value={password} 
+                 onChange={handleOnchange} />
                         </div>
                         <div className='inputs'>
                             <label htmlFor='cpassword'><strong>Confirm Password</strong></label><br/>
-                            <input type='password' placeholder='Confirm Password' required name="password2" 
-                 value={password2} 
-                 onChange={handleOnchange} />
+                            <input type='password' placeholder='Confirm Password' required  value={password2} 
+                 onChange={handleOnchange}/>
                         </div>
                         <br/><br/>
                         <div className="policy-text">
@@ -97,9 +96,10 @@ const Signup = () => {
                             <label for="policy"> I  agree to the
                             <a href='#'> Terms & Conditions</a></label>
                         </div>
-                        <button type='submit' className='sign-btn' value="Submit">Sign Up</button>
-                        
+                        <button type='submit' className='sign-btn'>Sign Up</button>
                     </form>
+                    </div>
+                    
                     <div className="signup-link">
                         Already have an Account? 
                         <Link to='/login'>  Login</Link>
@@ -108,8 +108,6 @@ const Signup = () => {
             </div>
         </div>
     </div>
-
   )
 }
-
 export default Signup

@@ -47,40 +47,44 @@ const Login = () => {
 
   return (
     <div className="login">
-        <Navbar />
-        <div className="form1-popup">
-            <div className="form1-box">
-                <div className="form1-details">
-                        <h2>Welcome Back</h2>
-                        <p>Please log in using your personal information to stay connected with us</p>
+    <Navbar />
+    <div className="form1-popup">
+        <div className="form1-description">
+            <p>Please log in using your personal information to stay connected with us.</p>
+        </div>
+        <div className="form1-box">
+            <div className="form1-details">
+                    <h2>Welcome Back</h2>
+                    {/* <p>Please log in using your personal information to stay connected with us</p> */}
+            </div>
+            <div className="form1-content">
+                <h2>LOGIN</h2>
+                <div className="form-wrapper"> {/* Added wrapper */}
+                  <form onSubmit={handleSubmit}>
+                      <div className='inputs'>
+                          <label htmlFor='email'><strong>Email</strong></label><br />
+                          <input type='email' placeholder='Enter Email' required value={logindata.email}  
+                     onChange={handleOnchange} />
+                      </div>
+                      <div className='inputs'>
+                          <label htmlFor='password'><strong>Password</strong></label><br />
+                          <input type='password' placeholder='Enter Password' required value={logindata.password}
+                   onChange={handleOnchange} />
+                      </div>
+                      <br/><a href="" className='forgot-pass'>Forgot password?</a>
+                      <button type='submit' className='log-btn'>Log In</button>
+                      
+                  </form>
                 </div>
-                <div className="form1-content">
-                    <h2>LOGIN</h2>
-                    <form onSubmit={handleSubmit}>
-                        <div className='inputs'>
-                            <label htmlFor='email'><strong>Email</strong></label><br />
-                            <input type='email' placeholder='Enter Email' required name="email" value={logindata.email}  
-                   onChange={handleOnchange}/>
-                        </div>
-                        <div className='inputs'>
-                            <label htmlFor='password'><strong>Password</strong></label><br />
-                            <input type='password' placeholder='Enter Password' required name="password" value={logindata.password}
-                 onChange={handleOnchange}/>
-                        </div>
-                        <br/><a href="" className='forgot-pass'>Forgot password?</a>
-                        <button type='submit' className='log-btn' value="Login">Log In</button>
-                        
-                    </form>
-                    <div className="signup-link">
-                        Don't have an Account? 
-                        <Link to='/signup'>  Sign Up</Link>
-                    </div>
+                <div className="signup-link">
+                    Don't have an Account? 
+                    <Link to='/signup'>  Sign Up</Link>
                 </div>
             </div>
         </div>
     </div>
-
-  )
+</div>
+)
 }
 
 export default Login

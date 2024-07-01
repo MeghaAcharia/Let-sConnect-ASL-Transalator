@@ -1,57 +1,89 @@
-.signup{
+.signup {
     width: 100%;
-    height: 150vh;
-    display:block;
+    min-height: 100vh; 
+    display: flex;
     align-items: center;
     justify-content: center;
     z-index: 10;
-    background: linear-gradient(rgba(97, 92, 128, 0.7),rgba(61, 52, 117, 0.7)), url(../../images/wallpaper.jpg);
+    background: linear-gradient(rgba(97, 92, 128, 0.7), rgba(61, 52, 117, 0.7)), url(../../images/wallpaper.jpg);
+    overflow-y: auto; 
+    padding-top: 50px; 
+    padding-bottom: 50px; 
 }
-.form2-popup{
-    top: 15%;
-    left: 20%;
-    max-width: 900px;
+
+.form2-popup {
+    max-width: 1000px;
     width: 100%;
-    height: 110vh;
-    background: #fff8f8;
+    min-height: 100vh; 
+    background: #efeff0;
     border: 2px solid #fff;
     box-shadow: 0 5px 15px rgba(30, 0, 179, 0.35);
-    position: relative;
+    position: relative; 
+    animation: fadeIn 0.6s ease-out;
+    overflow: hidden; 
 }
-.form2-popup .form2-box{
-    margin-top: 0;
-    display: flex;
-    justify-content: start;
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
-.form2-box .form2-details{
-    max-width: 330px;
+
+.form2-description {
     width: 100%;
-    margin: 5%;
-    padding: 0  20px;
-    display: flex;
     text-align: center;
+    padding: 10px 20px;
+    background-color: #fff8f8;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 5px 15px rgba(30, 0, 179, 0.1);
+}
+
+.form2-popup .form2-box {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    height: 100%; 
+}
+
+.form2-box .form2-details {
+    max-width: 350px;
+    width: 100%;
+    height: 85vh;
+    margin: 5% 3%;
+    padding: 0 20px;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: start;
+    justify-content: flex-start; 
     background: url("../../images/contact.png");
     background-size: cover;
     background-position: center;
 }
-.form2-box h2{
+
+.form2-box h2 {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
-.form2-box .form2-content{
+
+.form2-box .form2-content {
+    max-width: 100%;
     width: 100%;
-    padding: 35px;
+    height: 80vh;
+    margin-top: 5%;
+    margin-bottom: 10%;
 }
-form .inputs{
+
+form .inputs {
     height: 50px;
-    width: 100%;
+    max-width: 100%;
     margin-top: 20px;
     position: relative;
 }
-form .inputs input{
+
+form .inputs input {
     width: 100%;
     height: 100%;
     outline: none;
@@ -59,15 +91,18 @@ form .inputs input{
     font-size: 0.95rem;
     border-radius: 3px;
     border: 1px solid #717171;
-    
 }
-.inputs input:focus{
+
+.inputs input:focus {
     border-color: #000ed4;
+    text-align: center;
 }
-.inputs input:is(:focus, :valid){
+
+.inputs input:is(:focus, :valid) {
     padding: 16px 15px 0;
 }
-form .inputs label{
+
+form .inputs label {
     position: absolute;
     top: 17%;
     left: 15px;
@@ -76,24 +111,28 @@ form .inputs label{
     transform: translateY(-50%);
     transition: 0.2s ease;
 }
+
 .inputs input:is(:focus, :valid) ~ label {
-    
     font-size: 0.75rem;
     transform: translateY(-120%);
 }
-.form2-box a{
+
+.form2-box a {
     color: #000;
     text-decoration: none;
 }
-.form2-box a:hover{
+
+.form2-box a:hover {
     text-decoration: underline;
 }
-.form2-box .forgot-pass{
+
+.form2-box .forgot-pass {
     display: inline-flex;
     margin-top: 14px;
     font-size: 0.95rem;
 }
-.sign-btn{
+
+.sign-btn {
     width: 100%;
     outline: none;
     border: none;
@@ -101,39 +140,72 @@ form .inputs label{
     font-weight: 500;
     padding: 14px 0;
     border-radius: 3px;
-    margin: 25px 0;
+    margin: 15px 0;
     color: #fff;
     background: #717171;
     transition: all 0.3s ease;
     cursor: pointer;
 }
-.sign-btn:hover{
+
+.sign-btn:hover {
     color: #000;
     font-weight: 650;
     background: rgb(168, 168, 168);
     outline: 1.5px solid transparent;
 }
-.form2-box .signup-link{
+
+.form2-box .signup-link {
     text-align: center;
 }
-.policy-text{
+
+.policy-text {
     display: flex;
     align-items: center;
 }
-.policy-text input{
+
+.policy-text input {
     width: 14px;
     height: 14px;
     margin-right: 7px;
 }
+
 /* ---------- media query --------- */
-@media (max-width: 760px){
-    .form2-popup{
-        width: 95%;
+@media (max-width: 840px) {
+    .form2-popup {
+        width: 80%;
+        margin: 0 10%; /* Added margin to provide space from sides */
+        min-height: auto; /* Adjusted to auto for smaller screens */
     }
-    .form2-box .form2-details{
+
+    .form2-box {
+        flex-direction: column; /* Stack items vertically */
+    }
+
+    .form2-box .form2-details {
         display: none;
     }
-    .form2-box .form2-content{
+
+    .form2-box .form2-content {
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 760px) {
+    .form2-popup {
+        width: 80%;
+        margin: 0 10%; /* Added margin to provide space from sides */
+        min-height: auto; /* Adjusted to auto for smaller screens */
+    }
+
+    .form2-box {
+        flex-direction: column; /* Stack items vertically */
+    }
+
+    .form2-box .form2-details {
+        display: none;
+    }
+
+    .form2-box .form2-content {
         padding: 30px 20px;
     }
 }

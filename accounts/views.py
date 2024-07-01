@@ -153,6 +153,7 @@ class AnimationView(GenericAPIView):
         return Response({
             'status': 200,
             'message': 'success',
+            
             'videos': final
         })
 

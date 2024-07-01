@@ -9,7 +9,7 @@ def recognize_sign():
 
     # Load the trained model
     model = load_model('sign_language_model.h5')
-    gestures = ['a','again','age', 'b', 'c', 'd','department', 'e','engineering', 'f','family', 'father', 'forget', 'g', 'go', 'good', 'h','happy','have', 'hello', 'help', 'how are you','hurt', 'i','iam', 'j', 'k', 'l','learning','like','live', 'm', 'me','meet', 'more', 'mother', 'n','name','need','nice', 'no', 'o', 'p', 'please','practice', 'q', 'r', 's', 'sorry', 't', 'thankyou','time', 'u', 'v','vacation', 'w','want', 'what','where', 'x', 'y', 'yes','your', 'z']
+    gestures = ['a','age', 'b', 'c', 'd','department','drink', 'e','eat','engineering', 'f','family', 'father','food', 'forget', 'g','get', 'go', 'good', 'h','happy','have', 'hello', 'help', 'how are you','hurt', 'i','iam', 'j', 'k', 'l','learning','like','live', 'm', 'me','meet', 'more', 'mother', 'n','name','need','nice', 'no', 'o', 'p', 'please','practice', 'q', 'r', 's', 'sorry', 't', 'thankyou','time', 'u', 'v','vacation', 'w','want','water', 'what','where','where is your department','where','work', 'x', 'y','you','your']
     words = ['Dont_like', 'Hello', 'Like', 'Love', 'My', 'No', 'What', 'Yes', 'Your', 'Afternoon', 'Good', 'Help',
                 'House', 'Make', 'More', 'Morning', 'Name', 'Pay']
 

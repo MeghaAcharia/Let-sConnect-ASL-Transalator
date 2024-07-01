@@ -3,7 +3,7 @@ from nltk.tokenize import word_tokenize
 from nltk.tokenize import sent_tokenize
 from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer, WordNetLemmatizer
-from .asl_conditionals import *
+#from .asl_conditionals import *
 import nltk
 import string
 
@@ -55,14 +55,6 @@ def get_question(word, sentence):
 #2. Replace words with letters if not matched to db
 def get_letters(sentence, database):
 
-
-    database = ["a", "b", "bad", "bye","c", "d", "doing", "e", "f", "from", "g", 
-              "good", "great","h", "hello","hospital","house", "how", "how are you", "how many", 
-             "how much", "i", "j", "k", "l", "love", "m", "me", "meet", "my","n", 
-            "name", "nice", "no", "o", "p", "please", "q", "r", "s", "sorry", 
-            "t", "thank you", "u", "v", "w", "what", "when", "who", "where", 
-           "x", "y", "yes", "you","your", "z"
-           ]
     
     new_sentence = []
     for word in sentence:
@@ -109,10 +101,7 @@ def remove_punctuations(sentence):
 #1. Removing stop words
 def remove_stop_words(nltk_tokens, stop_words):
     #Remove stopwords
-    words_retained = []
-    for word in nltk_tokens:
-        if word not in stop_words:
-            words_retained.append(word)
+    words_retained = [word for word in nltk_tokens if word not in stop_words]
     new_sent = stem_lem(words_retained)
     return new_sent
 
@@ -140,11 +129,9 @@ def flatten_list(l):
 
 def text_to_sign(t, database):
    
-    #text = "My name is Trusha. What is your name? I will tell you tomorrow."
-    text = "My brown dog named Bruno chased a small cat yesterday."
-    #text = "Good morning. My name is Trusha. What is your name? What are you doing? When are you going?"
+    #text = "My brown dog named Bruno chased a small cat yesterday."
     text = t
-    database = ["a", "b", "bad", "bye", "c", "d", "doing", "e", "f", "from", "g", "good", "great", "h", "hello","hospital","house", "how", "how are you", "how many", "how much", "i", "j", "k", "l", "love", "m", "me", "meet", "my", "n", "name", "nice", "no", "o", "p", "please", "q", "r", "s", "sorry", "t", "thank you", "u", "v", "w", "what", "when", "who", "where", "x", "y", "yes", "you", "z"]
+    #database = ["a", "b", "c", "d", "doing", "e", "f", "from", "g", "good", "great", "h", "hello","hospital","house", "how", "how are you", "how many", "how much", "i", "j", "k", "l", "love", "m", "me", "meet", "my", "n", "name", "nice", "no", "o", "p", "please", "q", "r", "s", "sorry", "t", "thank you", "u", "v", "w", "what", "when", "who", "where", "x", "y", "yes", "you", "z"]
 
 # Call the function
    
@@ -154,7 +141,7 @@ def text_to_sign(t, database):
     #Customising stopwords
     stop_words = ['yourselves', 'its', 'themselves', 'am', 'is', 'are', 'were', 
                 'be', 'been', 'being', 'a', 'an', 'the', 'or', 'of', 'at', 'by', 
-                'above', 'off', 'further',  'once', 'such', 'nor', 'so']
+                'above', 'off', 'further',  'once', 'such', 'nor', 'so','can','to','do','for']
 
     #Tokenization
     final = []
@@ -168,7 +155,6 @@ def text_to_sign(t, database):
 
     for sentence in final:
         sentence = remove_punctuations(sentence)
-        new_sentence = []
         for each in sentence:
             #Question words
             if each in qwords:

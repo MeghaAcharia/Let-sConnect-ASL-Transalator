@@ -1,65 +1,57 @@
 .page1 {
-    background: rgb(250, 250, 240);
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center horizontally */
-    justify-content: center; /* Center vertically */
-    height: 100vh; /* Make the container full height of the viewport */
-  }
+  background: linear-gradient(-45deg, #6397ff, #f6e6fc, #f2feec, #b3b4ff);
   
-  .mainbox1 {
-    width: 70%; /* Set width to 70% */
-    padding: 20px; /* Add some padding for better spacing */
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center horizontally */
-    justify-content: center; /* Center vertically */
-    margin-top: 20px; /* Add margin to separate from the navbar */
+  animation: gradientBackground 8s ease infinite;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+@keyframes gradientBackground {
+  0% {
+    background-position: 0% 50%;
   }
-  
-  .start-btn {
-    font-size: 1rem; /* Adjust font size */
-    font-weight: 500;
-    color: #fff;
-    background: linear-gradient(90deg, #818181 0%, #818181 100%);
-    padding: 0.8rem 2rem; /* Adjust padding */
-    outline: 1.5px solid transparent;
-    border: none;
-    border-radius: 0.2rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-bottom: 10px;
+  50% {
+    background-position: 100% 50%;
   }
-  
-  .start-btn:hover {
-    color: #000;
-    background: #ffffff;
-    border: 1.5px solid #000; /* Add black border on hover */
-    outline: 1.5px solid transparent;
+  100% {
+    background-position: 0% 50%;
   }
-  
-  .stop-btn {
-    font-size: 1rem; /* Adjust font size */
-    font-weight: 500;
-    color: #fff;
-    background: linear-gradient(90deg, #818181 0%, #818181 100%);
-    padding: 0.8rem 2rem; /* Adjust padding */
-    margin-top: 10px; /* Add margin from video */
-    outline: 1.5px solid transparent;
-    border: none;
-    border-radius: 0.2rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-  
-  .stop-btn:hover {
-    color: #000;
-    background: #ffffff;
-    border: 1.5px solid #000; /* Add black border on hover */
-    outline: 1.5px solid transparent;
-  }
-  
-  .output-box {
+}
+
+.mainbox {
+  width: 95%;
+  height: 80%;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.left, .right {
+  height: 100%;
+}
+
+.left {
+  width: 35%; /* Left side 35% */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.right {
+  width: 55%; /* Right side remaining width */
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.output-box {
   background: rgb(222, 247, 255);
   width: 100%; /* Set width to 100% */
   height: 100px; /* Set height as needed */
@@ -71,7 +63,171 @@
   border-radius: 10px; /* Add border radius */
 }
 
-  .video-player {
-    width: 100%; /* Set width to 100% */
-    height: auto; /* Let the height scale with the width */
+.button-container {
+  padding: 0 8%;
+  display: flex;
+  justify-content: space-between; /* Center horizontally */
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.p1btn {
+  width: 50%;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #fff;
+  background: linear-gradient(90deg, #505fac 0%, rgb(131, 31, 173) 100%);
+  padding: 1rem 2.5rem;
+  outline: 1.5px solid transparent;
+  border: 1.5px solid #000; /* Added border */
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0 10px; /* Margin between buttons */
+}
+
+.refresh-btn {
+  width: 80%;
+  padding: 1rem 2.5rem; /* Ensure the padding matches the other buttons */
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.p1btn:hover {
+  color: #000;
+  background: #bfbaf8;
+  border: 1.5px solid #000;
+  outline: 1.5px solid transparent;
+}
+
+.navigation-buttons {
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  align-items: center;
+  width: 100%;
+  margin-top: 10px; /* Space between buttons and navigation */
+}
+
+.video-btn {
+  font-size: 1rem;
+  padding: 1rem 2.5rem; /* Match the padding of the Refresh button */
+  background-color: #131f55;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+  height: 58px;
+}
+
+.video-btn:hover {
+  background-color: #7080d0; /* Modified hover background color */
+  border: 1.5px solid #131f55;
+}
+
+.camera-container {
+  position: relative;
+  padding: 30px; 
+  border: 7px solid #131f55; 
+  box-shadow: 0 5px 15px rgba(30, 0, 179, 0.35); 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%; 
+  height: 100%; 
+  margin: 10px;
+}
+
+.video-player {
+  width: 100%; 
+  height: auto; 
+}
+
+/* Responsive adjustments */
+@media (max-width: 1100px) {
+  .page1 {
+    overflow-y: auto; /* Enable vertical scrolling */
+    background: linear-gradient(-45deg, #6397ff, #f6e6fc, #f2feec, #b3b4ff);
   }
+  .mainbox {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: auto;
+  }
+
+  .left {
+    max-width: 100%; /* Adjusted width for left section */
+    margin-bottom: 20px; /* Space between left and right sections */
+  }
+
+  .right {
+    max-width: 100%; /* Full width for right section */
+    height: 100vh; /* Adjust height */
+    margin-bottom: 20px;
+  }
+
+  .right .camera-container {
+    width: 100%; /* Increased width for camera container */
+    height: 65vh; /* Ensure it takes full height */
+    margin-bottom: 10%;
+  }
+}
+
+@media (max-width: 800px) {
+  .page1 {
+    overflow-y: auto; /* Enable vertical scrolling */
+    background: linear-gradient(-45deg, #6397ff, #f6e6fc, #f2feec, #b3b4ff);
+  }
+  .mainbox {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left {
+    max-width: 50%; /* Adjusted width for left section */
+    margin-bottom: 10px; /* Space between left and right sections */
+  }
+
+  .right {
+    width: 100%; /* Full width for right section */
+    height: auto; /* Adjust height */
+    margin-bottom: 20px;
+  }
+
+  .right .camera-container {
+    width: 100%; /* Increased width for camera container */
+    height: 65vh; /* Ensure it takes full height */
+    margin-bottom: 10%;
+  }
+}
+
+@media (max-width: 750px) {
+  .page1 {
+    overflow-y: auto; /* Enable vertical scrolling */
+    background: linear-gradient(-45deg, #6397ff, #f6e6fc, #f2feec, #b3b4ff);
+  }
+  .mainbox {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left {
+    width: 100%; /* Full width for left section */
+    margin-bottom: 10px; /* Space between left and right sections */
+  }
+
+  .right {
+    width: 100%; /* Full width for right section */
+    height: 100vh; /* Adjust height */
+    margin-bottom: 20px;
+  }
+
+  .right .camera-container {
+    width: 100%; /* Full width for camera container */
+    height: 65vh; /* Ensure it takes full viewport height */
+    margin-bottom: 10%;
+  }
+}

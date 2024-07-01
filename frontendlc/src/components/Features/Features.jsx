@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom'
 
 const Features = () => {
   return (
-    <div className='features' id='features'>
+    <div className='features'>
         <Navbar />
         <div className="cover1">
           <div className="f-left">

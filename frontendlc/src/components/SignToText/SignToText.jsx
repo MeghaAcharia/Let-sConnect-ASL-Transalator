@@ -6,6 +6,7 @@ import axios from "axios";
 import Navbar from '../Navbar/Navbar';
 import './Signtotext.css';
 import { useLayoutEffect } from "react";
+import { useNavigate } from 'react-router-dom';
 
 const SignToText = () => {
   function sendData() {}
@@ -16,6 +17,7 @@ const SignToText = () => {
   const recordedChunksRef = useRef([]);
   const [recordedChunksSai, setRecordedChunksSai] = useState([]);
   const [text, setText] = useState("");
+  const navigate = useNavigate();
   let model_text;
   const [showVideo, setShowVideo] = useState(false);
   const [showOutput, setShowOutput] = useState(false);
@@ -136,31 +138,47 @@ const SignToText = () => {
     e.target.style.height = `${e.target.scrollHeight}px`;
     setBackgroundHeight(e.target.scrollHeight);
   };
+  const navigateToPage2 = () => {
+    navigate('/textsign');
+  };
+
+  const navigateToPage3 = () => {
+    navigate('/speechsign');
+  };
+
 
 
 return (
   <div>
       <div className="page1">
       <Navbar />
-      <div className="mainbox1">
-      <video
-                        ref={videoRef}
-                        autoPlay
-                        muted
-                        // playsInline
-                      />
+      <div className="mainbox">
+      <div className="left">
         {!isCapturing && (
-          <button className="start-btn" onClick={handleStartCapture}>Start</button>
-        )}
-        {isCapturing && (
-          <button className="stop-btn" onClick={handleStopCapture}>Stop</button>
-        )}
-        {showOutput && (
-          <div className="output-box">
-            {text}
+            <button className="p1btn" onClick={handleStartCapture}>Start</button>
+          )}
+          {isCapturing && (
+            <button className="p1btn" onClick={handleStopCapture}>Stop</button>
+          )}
+          
+          {showOutput && (
+            <div className="output-box">
+              {text}
+            </div>
+          )}
+          <button className="p1btn refresh-btn" onClick={handleRefresh}>Refresh</button>
+          <div className="navigation-buttons">
+            <button className="video-btn" onClick={navigateToPage2}>Text to Sign</button>
+            <button className="video-btn" onClick={navigateToPage3}>Speech to Sign</button>
           </div>
-        )}
-              <button className='p2btn' onClick={handleRefresh}>Back</button>
+        </div>
+        <div className="right">
+          <div className="camera-container">
+          <video ref={videoRef} autoPlay 
+      muted // playsInline
+      />
+          </div>
+        </div>
   </div>
   </div>
     </div>

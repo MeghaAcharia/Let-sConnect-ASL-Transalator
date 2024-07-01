@@ -32,7 +32,7 @@ def get_question(word, sentence):
 def get_letters(sentence):
     database = ["A", "B", "C", "D", "E", "F", "G", "H", "J", "K", "L", 
                 "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"
-                "D(handtalk)", "Hello", "How are you", "I(pronoun)", 
+                "D(handtalk)", "Hello","hospital","house", "how are you", "How are you", "I(pronoun)", 
                 "what", "when", "who", "why", "where", "how"]
     new_sentence = []
     for word in sentence:

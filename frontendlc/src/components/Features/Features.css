@@ -1,53 +1,43 @@
+.cover1, .cover2, .cover3 {
+    margin: 5% 10%;
+    max-width: 80%;
+    width: 85%;
+    height: 24vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #b5d3e9;
+    border: 2px solid #fff;
+    border-radius: 1.5%;
+    box-shadow: 0 5px 15px rgba(30, 0, 179, 0.35);
+    position: fixed;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.cover1:hover, .cover2:hover, .cover3:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 10px 20px rgba(30, 0, 179, 0.5); 
+    background-color: #7c9ecf;
+}
+
 .cover1{
-    margin: 5% 10%;
-    max-width: 80%;
-    width: 85%;
-    height: 24vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #b5d3e9;
-    border: 2px solid #fff;
-    border-radius: 1.5%;
-    box-shadow: 0 5px 15px rgba(30, 0, 179, 0.35);
-    position: fixed;
+    top: 5px;
 }
-.cover2{
-    top: 225px;
-    margin: 5% 10%;
-    max-width: 80%;
-    width: 85%;
-    height: 24vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #b5d3e9;
-    border: 2px solid #fff;
-    border-radius: 1.5%;
-    box-shadow: 0 5px 15px rgba(30, 0, 179, 0.35);
-    position: fixed;
+.cover2 {
+    top: 230px;
 }
-.cover3{
-    top: 450px;
-    margin: 5% 10%;
-    max-width: 80%;
-    width: 85%;
-    height: 24vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #b5d3e9;
-    border: 2px solid #fff;
-    border-radius: 1.5%;
-    box-shadow: 0 5px 15px rgba(30, 0, 179, 0.35);
-    position: fixed;
+
+.cover3 {
+    top: 455px;
 }
-.f-left{
+
+.f-left {
     margin: 5% 5%;
     flex-basis: 15%;
     position: relative;
 }
-.f-right{
+
+.f-right {
     margin: 5% 5%;
     flex-basis: 56%;
     position: relative;
@@ -55,18 +45,21 @@
     justify-content: center;
     align-items: center;
 }
-.f-img{
+
+.f-img {
     width: 100%;
     border-radius: 10px;
 }
-.f-right h1{
+
+.f-right h1 {
     padding: 2%;
     text-align: center;
     font-weight: 600;
     font-size: 30px;
     color: #212EA0;
 }
-.f-right p{
+
+.f-right p {
     color: #393939;
     text-align: justify;
     font-weight: 600;

@@ -1,32 +1,58 @@
-.login{
+.login {
     width: 100%;
     height: 100vh;
-    display:block;
+    display: flex;
     align-items: center;
     justify-content: center;
     z-index: 10;
-    background: linear-gradient(rgba(97, 92, 128, 0.7),rgba(61, 52, 117, 0.7)), url(../../images/wallpaper.jpg);
+    background: linear-gradient(rgba(97, 92, 128, 0.7), rgba(61, 52, 117, 0.7)), url(../../images/wallpaper.jpg);
 }
-.form1-popup{
-    top: 20%;
-    left: 20%;
+
+.form1-popup {
     max-width: 900px;
     width: 100%;
-    height: 65vh;
+    height: 80vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: #fff8f8;
+    background: #efeff0;
     border: 2px solid #fff;
     box-shadow: 0 5px 15px rgba(30, 0, 179, 0.35);
     position: fixed;
+    animation: zoomIn 0.5s ease-in; 
 }
-.form1-box{
+
+@keyframes zoomIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.5); /* Start from smaller size */
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1); /* End at normal size */
+    }
+}
+.form1-description {
+    width: 100%;
+    text-align: center;
+    padding: 10px 20px;
+    background-color: #fff8f8;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 5px 15px rgba(30, 0, 179, 0.1);
+    margin-top: 0; /* Ensure no gap from the top */
+    position: absolute; /* Make sure it starts at the top */
+    top: 0; /* Align to the top */
+    margin-bottom: 20px; /* Add gap between form1-description and form1-box */
+}
+
+.form1-box {
     width: 100%;
     justify-content: center;
     display: flex;
 }
-.form1-details{
+
+.form1-details {
     max-width: 350px;
     width: 100%;
     margin: 5%;
@@ -34,42 +60,57 @@
     text-align: center;
     flex-direction: column;
     align-items: center;
-    justify-content:start;
+    justify-content: start;
     background: url("../../images/login.png");
     background-size: cover;
     background-position: bottom;
 }
-.form1-box h2{
+
+.form1-box h2 {
     text-align: center;
     margin-bottom: 30px;
 }
-.form1-box .form1-content{
+
+.form1-box .form1-content {
     width: 100%;
     padding: 35px;
 }
-form .inputs{
+
+.form-wrapper { /* New wrapper class */
+    width: calc(100% + 50px); /* Increased width by 50px */
+    padding: 0; /* Remove padding */
+}
+
+form {
+    width: 100%; /* Set form width to 100% of the wrapper */
+}
+
+form .inputs {
     height: 50px;
-    width: 100%;
+    width: 100%; /* Set inputs width to 100% of the wrapper */
     margin-top: 20px;
     position: relative;
 }
-form .inputs input{
-    width: 100%;
+
+form .inputs input {
+    width: 100%; /* Set inputs width to 100% of the wrapper */
     height: 100%;
     outline: none;
     padding: 0 15px;
     font-size: 0.95rem;
     border-radius: 3px;
     border: 1px solid #717171;
-    
 }
-.inputs input:focus{
+
+.inputs input:focus {
     border-color: #000ed4;
 }
-.inputs input:is(:focus, :valid){
+
+.inputs input:is(:focus, :valid) {
     padding: 16px 15px 0;
 }
-form .inputs label{
+
+form .inputs label {
     position: absolute;
     top: 17%;
     left: 15px;
@@ -78,24 +119,28 @@ form .inputs label{
     transform: translateY(-50%);
     transition: 0.2s ease;
 }
+
 .inputs input:is(:focus, :valid) ~ label {
-    
     font-size: 0.75rem;
     transform: translateY(-120%);
 }
-.form1-box a{
+
+.form1-box a {
     color: #000;
     text-decoration: none;
 }
-.form1-box a:hover{
+
+.form1-box a:hover {
     text-decoration: underline;
 }
-.form1-box .forgot-pass{
+
+.form1-box .forgot-pass {
     display: inline-flex;
     margin-top: 14px;
     font-size: 0.95rem;
 }
-.log-btn{
+
+.log-btn {
     width: 100%;
     outline: none;
     border: none;
@@ -109,19 +154,39 @@ form .inputs label{
     transition: all 0.3s ease;
     cursor: pointer;
 }
-.log-btn:hover{
+
+.log-btn:hover {
     color: #000;
     font-weight: 650;
     background: rgb(168, 168, 168);
     outline: 1.5px solid transparent;
 }
-.form1-box .signup-link{
+
+.form1-box .signup-link {
     text-align: center;
 }
+
 /* ---------- media query --------- */
+@media (max-width: 840px){
+    .form1-popup {
+        width: 80%;
+        margin: 0 10%; 
+    }
+    .form1-box .form1-details{
+        width: 90%;
+        flex-basis: 100%;
+        display: none;
+    }
+    .form1-box .form1-content{
+        flex-basis: 100%;
+        padding: 30px 20px;
+    }
+}
+
 @media (max-width: 760px){
     .form1-popup{
-        width: 95%;
+        width: 80%;
+        margin: 0 10%; 
         flex-direction: column;
     }
     .form1-box .form1-details{

@@ -1,41 +1,97 @@
+/* Import a Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
 
-.contact{
-    margin: 80px auto;
-    max-width: 90%;
+.div1 {
+    background: rgba(207, 201, 252, 0.7);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-top: 100px; /* Add padding to top to account for the navbar */
+}
+.div1 h2 {
+    text-align: center;
+    font-weight: 600;
+    font-size: 35px;
+    color: #212EA0;
+    font-family: 'Roboto', sans-serif; /* Apply new font style */
+}
+.div1 h3 {
+    text-align: center;
+    font-size: 24px;
+    color: #000F38;
+}
+.contact {
+    max-width: 80%;
     display: flex;
     align-content: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    width: 100%;
 }
-.contact-col{
+
+.contact-col {
+    align-items: center;
+    justify-content: center;
     flex-basis: 48%;
     color: #676767;
+    animation: slideUp 1s ease-out;
+    margin: 0 5px; /* Reduced gap between contact columns */
 }
-.contact-col h2{
-    color: #000F38;
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.contact-col h2 {
     font-weight: 500;
     font-size: 25px;
     display: flex;
     align-items: center;
     margin-bottom: 20px;
 }
-.contact-col h2 img{
+
+.contact-col h2 img {
     width: 35px;
     margin-left: 10px;
 }
-.contact-col p{
+
+.contact-col p {
     max-width: 450px;
     list-style: 0.3;
 }
-.contact-col ul li{
+
+.contact-col ul li {
     display: flex;
     align-items: center;
     margin: 20px 0;
 }
-.contact-col ul li img{
+
+.contact-col ul li img {
     width: 25px;
     margin-right: 10px;
 }
-.contact form input, .contact form textarea{
+
+.contact form input,
+.contact form textarea {
     display: block;
     width: 100%;
     background: #ebecfe;
@@ -46,11 +102,13 @@
     margin-top: 5px;
     resize: none;
 }
-.contact-col span{
+
+.contact-col span {
     display: block;
     margin: 20px 0;
 }
-.dark-btn{
+
+.dark-btn {
     background: #4d5ff9;
     color: #fff;
     padding: 14px 25px;
@@ -62,56 +120,79 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    transition: background 0.3s ease, border 0.3s ease; /* Smooth transition for hover effect */
 }
-.dark-btn img{
+
+.dark-btn:hover {
+    background: #5b81fc; /* Different shade of blue for hover effect */
+    border: 1px solid black; /* Add black border on hover */
+}
+
+.dark-btn img {
     width: 20px;
     margin-left: 10px;
 }
-.footer{
+
+.footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
     margin: 10px auto;
-    max-width: 90%;
+    max-width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     border-top: 1px solid #797979;
-    padding: 15px 0;
+    padding: 15px 10px;
+    box-sizing: border-box;
 }
-.footer ul li{
+
+.footer ul li {
     list-style: none;
     display: inline-block;
     margin-left: 20px;
 }
-.div1 h3{
-    margin-top: 80px;
-    text-align: center;
-    font-weight: 600;
-    font-size: 16px;
-    color: #212EA0;
-}
-.div1 h2{
-    text-align: center;
-    font-size: 35px;
-    color: #000F38;
-    
-}
+
+
 /* ----- media query ----- */
-@media (max-width: 700px){
-    .contact{
+@media (max-width: 700px) {
+    .contact {
+        margin-top: 0px;
         display: block;
+        padding: 0 20px; /* Add some padding for better spacing */
     }
-    .contact-col{
+    .contact-col {
         padding: 20px;
+        margin: 20px 0; /* Add margin to separate columns */
     }
-}
-@media (max-width: 600px){
-    .footer{
+    .footer {
+        position: static;
         display: block;
         text-align: center;
     }
-    .footer ul li{
+    .footer ul {
+        margin-top: 10px;
+    }
+    .footer ul li {
         margin: 10px;
     }
-    .footer ul{
+    .div1 {
+        padding-top: 150px; /* Increase padding-top for smaller screens */
+    }
+}
+
+@media (max-width: 600px) {
+    .footer {
+        display: block;
+        text-align: center;
+    }
+    .footer ul li {
+        margin: 10px;
+    }
+    .footer ul {
         margin-top: 10px;
+    }
+    .div1 {
+        padding-top: 140px; /* Ensure sufficient space below navbar */
     }
 }
